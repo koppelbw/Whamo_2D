@@ -6,21 +6,15 @@ public class Player_HoldingBall : MonoBehaviour {
 	private Ball_Controller ballController;
 	public bool isHoldingBall;
 
-	// Use this for initialization
 	void Start () {
 		ballController = GameObject.FindGameObjectWithTag ("BallController").GetComponent<Ball_Controller> ();
 		isHoldingBall = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+	// Pick Ball Up
 	void OnTriggerEnter2D(Collider2D collidedWith) {
-		//Debug.Log ("Trigger Entered!");
 		
-		if (collidedWith.gameObject.tag == "Ball") {
+		if (collidedWith.gameObject.tag == "Ball" && !ballController.isBeingThrown) {
 			isHoldingBall = true;
 			Debug.Log (gameObject.name + " picked up the ball!");
 
@@ -30,11 +24,13 @@ public class Player_HoldingBall : MonoBehaviour {
 			ballController.isHeldBy = this.gameObject;
 			ballController.isBeingThrown = false;
 			ballController.isLooseBall = false;
-			
-			//gameObject.transform.parent = GameObject.FindGameObjectWithTag("PlayerHoldingBall").transform;
-			
 		}
-		
+		else {
+			// TODO: TEMPORARY IMPLEMENTATION OF RESETING THE BALL
+			ballController.isBeingThrown = false;
+			ballController.isLooseBall = true;
+			ballController.isHeldBy = null;
+		}
 	}
 
 	public bool IsHoldingBall {

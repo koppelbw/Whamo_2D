@@ -6,19 +6,12 @@ public class Ball_Controller : MonoBehaviour {
 	public bool isLooseBall;
 	public GameObject isHeldBy;
 	public bool isBeingThrown;
-	
-	// Use this for initialization
+
 	void Start () {
 		isLooseBall = true;
 		isHeldBy = null;
 		isBeingThrown = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-	
 
 	bool IsLooseBall {
 		get {
@@ -46,6 +39,4 @@ public class Ball_Controller : MonoBehaviour {
 			isBeingThrown = value;
 		}
 	}
-
-
 }
