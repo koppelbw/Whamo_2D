@@ -6,6 +6,8 @@ TagManager:
   - Ball
   - PlayerHoldingBall
   - BallController
+  - GoalTeam1
+  - GoalTeam2
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
