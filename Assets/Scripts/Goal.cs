@@ -17,10 +17,13 @@ public class Goal : MonoBehaviour {
 			Instantiate(ballPrefab, field.position, field.rotation);
 
 			// update score
-			gameController.AddScore(1);
-
-
-
+			if(this.gameObject.tag == "GoalTeam1") {
+				gameController.AddScoreTeam2(1);
+			}
+			else if(this.gameObject.tag == "GoalTeam2") {
+				gameController.AddScoreTeam1(1);
+			}
 		}
 	}
+
 }

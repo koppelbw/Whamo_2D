@@ -101,8 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02bded1e2fdb1b4bb0ae5f5a7f075ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 819879178}
-  score: 0
+  scoreTextTeam1: {fileID: 819879178}
+  scoreTextTeam2: {fileID: 1048530551}
+  team1_Score: 0
+  team2_Score: 0
+  isGameOver: 0
+  winningTeam: 
 --- !u!4 &146825284
 Transform:
   m_ObjectHideFlags: 0
@@ -114,8 +118,8 @@ Transform:
   m_LocalScale: {x: 1.85000002, y: .620000005, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
---- !u!1001 &185156870
+  m_RootOrder: 3
+--- !u!1001 &238994759
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -128,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11.4645157
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -152,27 +156,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: field
       value: 
       objectReference: {fileID: 1910319902}
-    - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 146825283}
+    - target: {fileID: 100000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
+      propertyPath: m_TagString
+      value: GoalTeam1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-  m_RootGameObject: {fileID: 1594919051}
+  m_RootGameObject: {fileID: 2145678993}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1001 &569327293
@@ -227,7 +227,58 @@ Prefab:
   m_RootGameObject: {fileID: 1729845957}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1001 &735621337
+--- !u!1 &819879177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 819879179}
+  - 132: {fileID: 819879178}
+  m_Layer: 0
+  m_Name: ScoreTextTeam1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &819879178
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819879177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Team1: 0'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 10, y: -10}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 20
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &819879179
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819879177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1998019447}
+  m_RootOrder: 0
+--- !u!1001 &822668170
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -240,7 +291,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 11.4645157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -264,80 +315,25 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: field
       value: 
       objectReference: {fileID: 1910319902}
-    - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 146825283}
+    - target: {fileID: 100000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
+      propertyPath: m_TagString
+      value: GoalTeam2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-  m_RootGameObject: {fileID: 2145678993}
+  m_RootGameObject: {fileID: 1594919051}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &819879177
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 819879179}
-  - 132: {fileID: 819879178}
-  m_Layer: 0
-  m_Name: ScoreText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!132 &819879178
-GUIText:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 819879177}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: 'SCORE: 0'
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 10, y: -10}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 20
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_PixelCorrect: 1
-  m_RichText: 1
---- !u!4 &819879179
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 819879177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1.85000002, y: .620000005, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &832612382
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +366,7 @@ Transform:
   - {fileID: 1729845958}
   - {fileID: 1007995165}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &984233872
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +427,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.24266434
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -535,6 +531,57 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!1 &1048530550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1048530552}
+  - 132: {fileID: 1048530551}
+  m_Layer: 0
+  m_Name: ScoreTextTeam2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &1048530551
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048530550}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Team2: 0'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 10, y: -500}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 20
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1048530552
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048530550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1998019447}
+  m_RootOrder: 1
 --- !u!1001 &1144157042
 Prefab:
   m_ObjectHideFlags: 0
@@ -572,7 +619,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 86b3953040a0ed9419c84a6626748c1d, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86b3953040a0ed9419c84a6626748c1d, type: 2}
@@ -791,7 +838,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
 --- !u!58 &1564850621
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -825,7 +872,7 @@ MonoBehaviour:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-  m_PrefabInternal: {fileID: 185156870}
+  m_PrefabInternal: {fileID: 822668170}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1594919052}
@@ -833,7 +880,7 @@ GameObject:
   - 114: {fileID: 1594919053}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: GoalTeam2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -842,7 +889,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-  m_PrefabInternal: {fileID: 185156870}
+  m_PrefabInternal: {fileID: 822668170}
   m_GameObject: {fileID: 1594919051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -855,7 +902,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: f45474edda26e934c8141d97dd4efd7b,
     type: 2}
-  m_PrefabInternal: {fileID: 185156870}
+  m_PrefabInternal: {fileID: 822668170}
   m_GameObject: {fileID: 1594919051}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -870,7 +917,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100000, guid: f45474edda26e934c8141d97dd4efd7b,
     type: 2}
-  m_PrefabInternal: {fileID: 185156870}
+  m_PrefabInternal: {fileID: 822668170}
   m_GameObject: {fileID: 1594919051}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -984,7 +1031,7 @@ Transform:
   m_Children:
   - {fileID: 1943112270}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1910319900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1081,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!1001 &1931114953
 Prefab:
   m_ObjectHideFlags: 0
@@ -1138,7 +1185,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1943112268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.250999987, y: .109999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1491477666}
@@ -1269,12 +1316,93 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
+--- !u!1 &1995182500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1995182502}
+  - 132: {fileID: 1995182501}
+  m_Layer: 0
+  m_Name: WinningTeamText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &1995182501
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1995182500}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Winner: '
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 10, y: -250}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 20
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1995182502
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1995182500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1998019447}
+  m_RootOrder: 2
+--- !u!1 &1998019446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1998019447}
+  m_Layer: 0
+  m_Name: GUI_TEXT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998019447
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998019446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1.8499999, y: .620000005, z: 1}
+  m_Children:
+  - {fileID: 819879179}
+  - {fileID: 1048530552}
+  - {fileID: 1995182502}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &2145678993
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-  m_PrefabInternal: {fileID: 735621337}
+  m_PrefabInternal: {fileID: 238994759}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2145678994}
@@ -1282,7 +1410,7 @@ GameObject:
   - 114: {fileID: 2145678995}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: GoalTeam1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1291,7 +1419,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: f45474edda26e934c8141d97dd4efd7b, type: 2}
-  m_PrefabInternal: {fileID: 735621337}
+  m_PrefabInternal: {fileID: 238994759}
   m_GameObject: {fileID: 2145678993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 11.4645157, z: 0}
@@ -1304,7 +1432,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: f45474edda26e934c8141d97dd4efd7b,
     type: 2}
-  m_PrefabInternal: {fileID: 735621337}
+  m_PrefabInternal: {fileID: 238994759}
   m_GameObject: {fileID: 2145678993}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1319,7 +1447,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100000, guid: f45474edda26e934c8141d97dd4efd7b,
     type: 2}
-  m_PrefabInternal: {fileID: 735621337}
+  m_PrefabInternal: {fileID: 238994759}
   m_GameObject: {fileID: 2145678993}
   m_Enabled: 1
   m_Material: {fileID: 0}
